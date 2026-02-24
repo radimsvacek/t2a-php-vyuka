@@ -3,209 +3,235 @@
 declare(strict_types=1);
 
 /*
-========================================
-    PROCVIČOVÁNÍ ZÁKLADŮ PHP
-    2. ročník – funkce, podmínky, cykly
-========================================
+==================================================
+    PROCVIČOVÁNÍ PHP – LEKCE 2 (pokročilejší)
+    Pole, řetězce, podmínky, cykly, kombinace
+==================================================
 
 Instrukce:
 - Každý úkol řešte úpravou příslušné funkce.
 - Neměňte názvy funkcí ani parametry.
-- U každé funkce dole vytvořte alespoň 2 testovací volání.
-- Používejte typové deklarace.
+- U každé funkce vytvořte alespoň 2 testovací volání dole.
+- Nepoužívejte zbytečně hotové vestavěné funkce,
+  pokud je cílem procvičit cykly a podmínky.
 - Pište přehledný a odsazený kód.
 */
 
 
 /*
-----------------------------------------
-1) Sudé nebo liché číslo
-----------------------------------------
-Vraťte true, pokud je číslo sudé.
-Vraťte false, pokud je liché.
-Použijte operátor %.
+--------------------------------------------------
+1) Průměr známek
+--------------------------------------------------
+Pole obsahuje známky (1–5).
+Vraťte průměr známek jako float.
+
+Pokud je pole prázdné, vraťte 0.
 */
-function jeSude(int $cislo): bool
+function prumerZnamek(array $znamky): float
 {
 	// TODO: Doplňte řešení
 }
 
 
 /*
-----------------------------------------
-2) Kalkulačka
-----------------------------------------
-Operace může být:
-"+", "-", "*", "/"
+--------------------------------------------------
+2) Najdi nejdelší slovo
+--------------------------------------------------
+Pole obsahuje řetězce.
+Vraťte nejdelší slovo.
 
-Pokud dojde k dělení nulou,
-vraťte text: "Nelze dělit nulou"
+Pokud je pole prázdné, vraťte prázdný řetězec.
 */
-function kalkulacka(float $a, float $b, string $operace): float|string
+function nejdelsiSlovo(array $slova): string
 {
 	// TODO: Doplňte řešení
 }
 
 
 /*
-----------------------------------------
-3) Největší ze tří čísel
-----------------------------------------
-Vraťte největší číslo.
-Nepoužívejte funkci max().
+--------------------------------------------------
+3) Počet výskytů znaku v textu
+--------------------------------------------------
+Spočítejte, kolikrát se v textu nachází daný znak.
+Nepoužívejte substr_count().
 */
-function nejvetsi(int $a, int $b, int $c): int
+function pocetVyskytu(string $text, string $znak): int
 {
 	// TODO: Doplňte řešení
 }
 
 
 /*
-----------------------------------------
-4) Součet čísel od 1 do N
-----------------------------------------
-Spočítejte součet čísel od 1 do $n
-pomocí cyklu.
+--------------------------------------------------
+4) Je heslo dostatečně silné?
+--------------------------------------------------
+Heslo je silné, pokud:
+- má alespoň 8 znaků
+- obsahuje alespoň jedno číslo
+- obsahuje alespoň jedno velké písmeno
+
+Vraťte true / false.
 */
-function soucetDoN(int $n): int
+function jeSilneHeslo(string $heslo): bool
 {
 	// TODO: Doplňte řešení
 }
 
 
 /*
-----------------------------------------
-5) Faktoriál čísla
-----------------------------------------
-Např.:
-5! = 5 × 4 × 3 × 2 × 1 = 120
-
-Bonus:
-Ošetřete záporné číslo.
+--------------------------------------------------
+5) Součet pouze kladných čísel
+--------------------------------------------------
+Pole obsahuje různá čísla (kladná i záporná).
+Vraťte součet pouze kladných čísel.
 */
-function faktorial(int $n): int
+function soucetKladnych(array $cisla): int
 {
 	// TODO: Doplňte řešení
 }
 
 
 /*
-----------------------------------------
-6) Počet sudých čísel v poli
-----------------------------------------
-Spočítejte, kolik sudých čísel je v poli.
-Použijte foreach.
+--------------------------------------------------
+6) Převod teplot
+--------------------------------------------------
+Pokud je jednotka:
+"C" → převeď na Fahrenheit
+"F" → převeď na Celsius
+
+Vzorce:
+C → F: (C * 9/5) + 32
+F → C: (F - 32) * 5/9
+
+Pokud je jiná jednotka, vraťte null.
 */
-function pocetSudyChCisel(array $pole): int
+function prevedTeplotu(float $hodnota, string $jednotka): ?float
 {
 	// TODO: Doplňte řešení
 }
 
 
 /*
-----------------------------------------
-7) Je student přijat?
-----------------------------------------
-Podmínky:
-- Součet bodů alespoň 60
-- Z testu alespoň 25 bodů
+--------------------------------------------------
+7) Jednoduchá statistika pole
+--------------------------------------------------
+Vraťte asociativní pole ve tvaru:
 
-Použijte logické operátory.
+[
+    "min" => nejmenší hodnota,
+    "max" => největší hodnota,
+    "pocet" => počet prvků
+]
+
+Nepoužívejte min() ani max().
+Pokud je pole prázdné, vraťte prázdné pole.
 */
-function jePrijat(int $bodyTest, int $bodyUstni): bool
+function statistikaPole(array $cisla): array
 {
 	// TODO: Doplňte řešení
 }
 
 
 /*
-----------------------------------------
-8) Násobilka
-----------------------------------------
-Vypište násobilku čísla od 1 do 10.
-Použijte cyklus for.
-
-Příklad pro 5:
-5 x 1 = 5
-5 x 2 = 10
-...
+--------------------------------------------------
+8) Odstranění duplicit
+--------------------------------------------------
+Vraťte nové pole bez duplicit.
+Nepoužívejte array_unique().
 */
-function nasobilka(int $cislo): void
+function odstranDuplicity(array $pole): array
 {
 	// TODO: Doplňte řešení
 }
 
 
 /*
-----------------------------------------
-9) Obrácení textu
-----------------------------------------
-Vraťte text pozpátku.
+--------------------------------------------------
+9) Jednoduchý nákupní košík
+--------------------------------------------------
+Pole obsahuje ceny produktů.
+Vraťte celkovou cenu.
+
+Pokud je celková cena vyšší než 1000,
+poskytněte slevu 10 %.
+
+Vrací výslednou cenu.
+*/
+function spocitejKosik(array $ceny): float
+{
+	// TODO: Doplňte řešení
+}
+
+
+/*
+--------------------------------------------------
+10) Šachovnicový výpis
+--------------------------------------------------
+Vypište čtverec o velikosti $n
+z hvězdiček a mezer střídavě.
+
+Např. pro 4:
+
+* * *
+ * * *
+* * *
+ * * *
+
+Použijte vnořené cykly.
+*/
+function sachovnice(int $n): void
+{
+	// TODO: Doplňte řešení
+}
+
+
+/*
+--------------------------------------------------
+BONUS
+--------------------------------------------------
+Vytvořte funkci, která zjistí,
+zda je text palindrom (čte se stejně
+zepředu i zezadu).
+
 Nepoužívejte strrev().
+Ignorujte velikost písmen.
 */
-function obratText(string $text): string
+function jePalindrom(string $text): bool
 {
 	// TODO: Doplňte řešení
 }
 
 
 /*
-----------------------------------------
-10) Hádání čísla
-----------------------------------------
-Vraťte:
-"Uhodl jsi!"
-"Moc malé"
-"Moc velké"
-*/
-function zkontrolujTip(int $tajneCislo, int $tip): string
-{
-	// TODO: Doplňte řešení
-}
-
-
-/*
-----------------------------------------
-BONUS (pokud zbyde čas)
-----------------------------------------
-Zjistěte, zda je číslo prvočíslo.
-*/
-function jePrvocislo(int $n): bool
-{
-	// TODO: Doplňte řešení
-}
-
-
-/*
-========================================
+==================================================
 TESTOVACÍ VOLÁNÍ
 (Odkomentujte po dokončení funkcí)
-========================================
+==================================================
 
-// var_dump(jeSude(4));
-// var_dump(jeSude(7));
+// var_dump(prumerZnamek([1,2,3,4]));
+// var_dump(prumerZnamek([]));
 
-// var_dump(kalkulacka(10, 5, "+"));
-// var_dump(kalkulacka(10, 0, "/"));
+// var_dump(nejdelsiSlovo(["pes", "kočka", "slon"]));
 
-// var_dump(nejvetsi(5, 9, 3));
+// var_dump(pocetVyskytu("programovani", "o"));
 
-// var_dump(soucetDoN(5));
+// var_dump(jeSilneHeslo("Test1234"));
+// var_dump(jeSilneHeslo("abc"));
 
-// var_dump(faktorial(5));
+// var_dump(soucetKladnych([-5, 10, -3, 7]));
 
-// var_dump(pocetSudyChCisel([1,2,3,4,6]));
+// var_dump(prevedTeplotu(0, "C"));
+// var_dump(prevedTeplotu(32, "F"));
 
-// var_dump(jePrijat(30, 35));
-// var_dump(jePrijat(20, 40));
+// var_dump(statistikaPole([5,2,9,1]));
 
-// nasobilka(5);
+// var_dump(odstranDuplicity([1,2,2,3,1,4]));
 
-// var_dump(obratText("PHP"));
+// var_dump(spocitejKosik([200, 500, 400]));
 
-// var_dump(zkontrolujTip(50, 30));
-// var_dump(zkontrolujTip(50, 50));
+// sachovnice(4);
 
-// var_dump(jePrvocislo(7));
+// var_dump(jePalindrom("Kajak"));
+// var_dump(jePalindrom("PHP"));
 
 */
