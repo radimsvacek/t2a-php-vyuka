@@ -45,6 +45,8 @@
         <h2>Příklady</h2>
         <ul>
             <li><a href="formular.php">Formulář</a></li>
+            <li><a href="09-formulare-priklad.php">Lekce 9: Formuláře - Příklad</a></li>
+            <li><a href="09-formulare-zadani.php">Lekce 9: Formuláře - Zadání</a></li>
         </ul>
     </div>
 
