@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 session_start();
 
-// === ZDE PIŠTĚ SVŮJ KÓD PRO ZPRACOVÁNÍ FORMULÁŘŮ ===
+// === ZDE PIŠTE SVŮJ KÓD PRO ZPRACOVÁNÍ FORMULÁŘŮ ===
 
 ?>
 <!DOCTYPE html>
@@ -173,7 +173,10 @@ session_start();
         <div class="hint-box">
             Nápověda: Použij <code>type="password"</code> pro heslo.
             Porovnej s pevně danými hodnotami, např. <code>$spravneJmeno = 'admin'</code>,
-            <code>$spravneHeslo = 'heslo123'</code>.
+            <code>$spravneHeslo = 'heslo123'</code>.<br><br>
+            <strong>Pozor:</strong> V reálné aplikaci se hesla nikdy neukládají jako text!
+            Používá se <code>password_hash()</code> pro uložení a <code>password_verify()</code>
+            pro ověření. Tady pro jednoduchost porovnáváme přímo.
         </div>
 
         <!-- TODO: Formulář s inputy: uzivatel (text), heslo (password) -->
@@ -272,7 +275,7 @@ session_start();
         <h2>Registrace</h2>
 
         <div class="hint-box">
-            Nápověda: Pro validaci délky textu použij <code>strlen()</code> nebo <code>mb_strlen()</code>.
+            Nápověda: Pro validaci délky textu použij <code>mb_strlen()</code> (počítá znaky, ne bajty — důležité pro češtinu).
             Pro zachování hodnot ve formuláři: <code>&lt;input value="&lt;?= htmlspecialchars($prezdivka) ?&gt;"&gt;</code>.
             Pro kontrolu emailu: <code>filter_var($email, FILTER_VALIDATE_EMAIL)</code>.
             Checkbox: <code>isset($_POST['souhlas'])</code>.
@@ -319,9 +322,11 @@ session_start();
 
         <h3>Zpracování v PHP</h3>
 <pre>if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $jmeno = htmlspecialchars($_POST['jmeno'] ?? '');
-    echo "Ahoj, $jmeno!";
-}</pre>
+    // Data čteme "surová" - escapujeme až při výpisu!
+    $jmeno = trim($_POST['jmeno'] ?? '');
+}
+// Při výpisu do HTML vždy escapujeme:
+echo htmlspecialchars($jmeno);</pre>
 
         <h3>Typy inputů</h3>
 <pre>type="text"      - běžný text
@@ -353,6 +358,15 @@ if (mb_strlen($heslo) < 6) {
 
 if (empty($chyby)) {
     // Vše OK - zpracuj data
+}</pre>
+
+        <h3>PRG pattern (Post/Redirect/Get)</h3>
+<pre>// Po úspěšném zpracování POST přesměruj!
+// Bez toho by refresh stránky odeslal data znovu.
+if (empty($chyby)) {
+    $_SESSION['data'][] = ['jmeno' => $jmeno];
+    header('Location: ' . $_SERVER['REQUEST_URI']);
+    exit;
 }</pre>
 
         <h3>Session</h3>

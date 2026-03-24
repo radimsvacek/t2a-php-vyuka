@@ -47,6 +47,8 @@
             <li><a href="formular.php">Formulář</a></li>
             <li><a href="09-formulare-priklad.php">Lekce 9: Formuláře - Příklad</a></li>
             <li><a href="09-formulare-zadani.php">Lekce 9: Formuláře - Zadání</a></li>
+            <li><a href="10-formular-akce-priklad.php">Lekce 10: Formulář s akcí na jinou stránku - Příklad</a></li>
+            <li><a href="10-formular-akce-zadani.php">Lekce 10: Formulář s akcí na jinou stránku - Zadání</a></li>
         </ul>
     </div>
 
