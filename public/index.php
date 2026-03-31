@@ -28,6 +28,11 @@
             <li><a href="09-formulare-zadani.php">Lekce 9: Formuláře - Zadání</a></li>
             <li><a href="10-formular-akce-priklad.php">Lekce 10: Formulář s akcí na jinou stránku - Příklad</a></li>
             <li><a href="10-formular-akce-zadani.php">Lekce 10: Formulář s akcí na jinou stránku - Zadání</a></li>
+            <li><a href="11a-registrace-priklad.php">Lekce 11a: Registrační formulář s validací - Příklad</a></li>
+            <li><a href="11a-registrace-zadani.php">Lekce 11a: Editace profilu - Zadání</a></li>
+            <li><a href="11b-objednavka-priklad.php">Lekce 11b: Objednávkový formulář - Příklad</a></li>
+            <li><a href="11b-objednavka-zadani.php">Lekce 11b: Kalkulačka školního výletu - Zadání</a></li>
+            <li><a href="11c-kviz-zadani.php">Lekce 11c: Kvíz s vyhodnocením - Zadání</a></li>
         </ul>
     </div>
 
