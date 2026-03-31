@@ -57,8 +57,13 @@ git push
 
 ```
 lekce/          - PHP skripty pro procvičování (spouští se v terminálu)
-public/         - webové stránky (spouští se přes PHP server)
+public/         - webové stránky z lekcí (spouští se přes PHP server)
+projekt/        - e-shop projekt (2. fáze – PHP + SQLite)
 ```
+
+## Projekt – E-shop (2. fáze)
+
+Složka `projekt/` obsahuje připravený základ pro druhou fázi projektu e-shopu (PHP + SQLite databáze). Kompletní návod k použití najdete v **[projekt/README.md](projekt/README.md)**.
 
 ## Postup lekcí
 

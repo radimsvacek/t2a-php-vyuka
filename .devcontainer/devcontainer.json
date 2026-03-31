@@ -2,7 +2,7 @@
   "name": "PHP Výuka",
   "image": "mcr.microsoft.com/devcontainers/php:8.3",
   "forwardPorts": [8080],
-  "postCreateCommand": "echo '✅ Prostředí připraveno! Spusť: php -S 0.0.0.0:8080 -t public'",
+  "postCreateCommand": "php projekt/database/init.php && echo '✅ Prostředí připraveno! Spusť: php -S 0.0.0.0:8080 -t projekt'",
   "customizations": {
     "vscode": {
       "extensions": [
