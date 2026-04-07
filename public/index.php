@@ -33,6 +33,8 @@
             <li><a href="11b-objednavka-priklad.php">Lekce 11b: Objednávkový formulář - Příklad</a></li>
             <li><a href="11b-objednavka-zadani.php">Lekce 11b: Kalkulačka školního výletu - Zadání</a></li>
             <li><a href="11c-kviz-zadani.php">Lekce 11c: Kvíz s vyhodnocením - Zadání</a></li>
+            <li><a href="12-soubory-priklad.php">Lekce 12: Práce se soubory (návštěvní kniha) - Příklad</a></li>
+            <li><a href="12-soubory-zadani.php">Lekce 12: Kontaktní formulář s CSV - Zadání</a></li>
         </ul>
     </div>
 
